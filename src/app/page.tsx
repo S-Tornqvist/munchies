@@ -6,7 +6,7 @@ export default function Home() {
       <div className="flex-none pb-12">
         <Image
           priority
-          src={"/munchies-dark.svg"}
+          src={"/munchies.svg"}
           alt="Munchies logo"
           className="dark:invert"
           width={273.42}
