@@ -3,27 +3,51 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --white: #FFFFFF;
+  --off-white: #FAFAFA;
+  --stroke: rgba(0, 0, 0, 0.10);
+  --black: #000000;
+  --green: #00703A;
+
+  --foreground-color: var(--black);
+  --background-color: var(--off-white);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-color: var(--white);
+    --background-color: var(--black);
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--foreground-color);
+  background: var(--background-color);
+
+  font-size: 12px;
+  letter-spacing: -0.03125rem;
+
+  /* TODO: download and use SF-Pro
+   https://developer.apple.com/fonts/
+   Comes as a dmg.*/
+}
+
+h1 {
+  font-weight: regular;
+  font-size: 24px;
+  letter-spacing: -0.03125rem;
+}
+
+.title {
+  font-weight: regular;
+  font-size: 14px;
+  letter-spacing: -0.03125rem;
+}
+
+.subtitle {
+  font-weight: regular;
+  font-size: 12px;
+  letter-spacing: -0.03125rem;
 }
 
 @layer utilities {
