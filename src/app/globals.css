@@ -3,20 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --white: #FFFFFF;
-  --off-white: #FAFAFA;
-  --stroke: rgba(0, 0, 0, 0.10);
-  --black: #000000;
-  --green: #00703A;
-
-  --foreground-color: var(--black);
-  --background-color: var(--off-white);
+  --foreground-color: theme('colors.black');
+  --background-color: theme('colors.off-white');
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-color: var(--white);
-    --background-color: var(--black);
+    --foreground-color: theme('colors.white');
+    --background-color: theme('colors.black');
   }
 }
 
