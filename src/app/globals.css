@@ -25,6 +25,7 @@ body {
   background: var(--background-color);
 
   font-size: 12px;
+  line-height: 125%;
   letter-spacing: -0.03125rem;
 
   /* TODO: download and use SF-Pro
@@ -35,18 +36,21 @@ body {
 h1 {
   font-weight: regular;
   font-size: 24px;
+  line-height: 125%;
   letter-spacing: -0.03125rem;
 }
 
 .title {
   font-weight: regular;
   font-size: 14px;
+  line-height: 125%;
   letter-spacing: -0.03125rem;
 }
 
 .subtitle {
   font-weight: regular;
   font-size: 12px;
+  line-height: 125%;
   letter-spacing: -0.03125rem;
 }
 
