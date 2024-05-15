@@ -13,6 +13,7 @@ const config: Config = {
       white: "#ffffff",
       "off-white": "#fafafa",
       black: "#000000",
+      "off-black": "#101010",
       green: "#00703a",
     },
   },

@@ -17,7 +17,7 @@ export default function Home() {
       {/* Main. Includes filter panel, filter top row and restaurants */}
       <div className="flex-auto flex flex-row overflow-auto">
         {/* Filter panel */}
-        <div className="flex-none w-60 min-h-full p-4 mr-4 bg-white border">
+        <div className="flex-none w-60 min-h-full p-4 mr-4 bg-white dark:bg-black border">
           <h1>Filter</h1>
           <div className="py-2">
             <p>FOOD CATEGORY</p>
@@ -97,15 +97,15 @@ function PriceFilters() {
 function TopFoodFilters() {
   return (
     <>
-      <div className="min-h-20 min-w-40 p-2 mx-2 bg-white border">
+      <div className="min-h-20 min-w-40 p-2 mx-2 bg-white dark:bg-black border">
         Hamburgers
       </div>
-      <div className="min-h-20 min-w-40 p-2 mx-2 bg-white border">Pizza</div>
-      <div className="min-h-20 min-w-40 p-2 mx-2 bg-white border">Taco</div>
-      <div className="min-h-20 min-w-40 p-2 mx-2 bg-white border">Coffee</div>
-      <div className="min-h-20 min-w-40 p-2 mx-2 bg-white border">Fries</div>
-      <div className="min-h-20 min-w-40 p-2 mx-2 bg-white border">Mexican</div>
-      <div className="min-h-20 min-w-40 p-2 mx-2 bg-white border">
+      <div className="min-h-20 min-w-40 p-2 mx-2 bg-white dark:bg-black border">Pizza</div>
+      <div className="min-h-20 min-w-40 p-2 mx-2 bg-white dark:bg-black border">Taco</div>
+      <div className="min-h-20 min-w-40 p-2 mx-2 bg-white dark:bg-black border">Coffee</div>
+      <div className="min-h-20 min-w-40 p-2 mx-2 bg-white dark:bg-black border">Fries</div>
+      <div className="min-h-20 min-w-40 p-2 mx-2 bg-white dark:bg-black border">Mexican</div>
+      <div className="min-h-20 min-w-40 p-2 mx-2 bg-white dark:bg-black border">
         Breakfast
       </div>
     </>
@@ -115,19 +115,19 @@ function TopFoodFilters() {
 function Restaurants() {
   return (
     <>
-      <div className="pt-40 min-w-80 p-2 m-2 bg-white border">Cortado Bar</div>
-      <div className="pt-40 min-w-80 p-2 m-2 bg-white border">Neta</div>
-      <div className="pt-40 min-w-80 p-2 m-2 bg-white border">
+      <div className="pt-40 min-w-80 p-2 m-2 bg-white dark:bg-black border">Cortado Bar</div>
+      <div className="pt-40 min-w-80 p-2 m-2 bg-white dark:bg-black border">Neta</div>
+      <div className="pt-40 min-w-80 p-2 m-2 bg-white dark:bg-black border">
         Breakfast Club
       </div>
-      <div className="pt-40 min-w-80 p-2 m-2 bg-white border">
+      <div className="pt-40 min-w-80 p-2 m-2 bg-white dark:bg-black border">
         Burgers n&apos; stuff
       </div>
-      <div className="pt-40 min-w-80 p-2 m-2 bg-white border">Fries Guys</div>
-      <div className="pt-40 min-w-80 p-2 m-2 bg-white border">Cortado Bar</div>
-      <div className="pt-40 min-w-80 p-2 m-2 bg-white border">Cortado Bar</div>
-      <div className="pt-40 min-w-80 p-2 m-2 bg-white border">Cortado Bar</div>
-      <div className="pt-40 min-w-80 p-2 m-2 bg-white border">Cortado Bar</div>
+      <div className="pt-40 min-w-80 p-2 m-2 bg-white dark:bg-black border">Fries Guys</div>
+      <div className="pt-40 min-w-80 p-2 m-2 bg-white dark:bg-black border">Cortado Bar</div>
+      <div className="pt-40 min-w-80 p-2 m-2 bg-white dark:bg-black border">Cortado Bar</div>
+      <div className="pt-40 min-w-80 p-2 m-2 bg-white dark:bg-black border">Cortado Bar</div>
+      <div className="pt-40 min-w-80 p-2 m-2 bg-white dark:bg-black border">Cortado Bar</div>
     </>
   );
 }
