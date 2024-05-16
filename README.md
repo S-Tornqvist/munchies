@@ -1,5 +1,7 @@
 # Munchies
 
+Visit the app on https://munchies.simon-tornqvist.se !
+
 This application is a work test for Umain. The specification is found on [their GitHub](https://github.com/apegroup/umain-work-test-web).
 
 ## Technology
@@ -9,6 +11,8 @@ The application tech stack mimics [Umain's preferred tech stack](https://github.
 ## Deployment
 
 The application is deployed on a private Amazon EC2 instance, using Nginx for reverse proxying and PM2 for Node process management.
+
+An alternative backup deployment is done to https://fir-tornqvist-munchies.web.app using Firebase.
 
 ## Development
 
