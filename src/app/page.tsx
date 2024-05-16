@@ -1,5 +1,8 @@
 import Image from "next/image";
-import Filter from "./components/Filter";
+import Filter from "./components/FoodFilter";
+import FoodCard from "./components/FoodCard";
+import { imageURL } from "@/util/image";
+import RestaurantCard from "./components/RestaurantCard";
 
 export default function Home() {
   return (
@@ -19,7 +22,7 @@ export default function Home() {
       <div className="flex-1 flex flex-col md:flex-row overflow-auto">
         {/* Filter panel mobile */}
         <div className="md:hidden flex-none mb-8">
-          <div>DELIVERY TIME</div>
+          <div className="font-semibold opacity-40 mb-4">DELIVERY TIME</div>
           <div className="flex flex-row flex-nowrap overflow-x-auto no-scrollbar">
             <TimeFilters />
           </div>
@@ -58,7 +61,7 @@ export default function Home() {
           {/* Restaurants */}
           <div className="flex flex-col overflow-hidden">
             <div className="flex-none">
-              <h1>Restaurants</h1>
+              <div className="display mb-8">Restaurants</div>
             </div>
             <div className="flex-1 flex flex-row flex-wrap justify-center md:justify-normal overflow-auto no-scrollbar">
               <Restaurants />
@@ -84,10 +87,10 @@ function FoodFilters() {
 function TimeFilters() {
   return (
     <>
-      <Filter className="mr-2.5 mb-2.5">0-10 min</Filter>
-      <Filter className="mr-2.5 mb-2.5">10-30 min</Filter>
-      <Filter className="mr-2.5 mb-2.5">30-40 min</Filter>
-      <Filter className="mr-2.5 mb-2.5">1 hour+</Filter>
+      <Filter className="mr-2.5 last:mr-0 mb-2.5">0-10 min</Filter>
+      <Filter className="mr-2.5 last:mr-0 mb-2.5">10-30 min</Filter>
+      <Filter className="mr-2.5 last:mr-0 mb-2.5">30-40 min</Filter>
+      <Filter className="mr-2.5 last:mr-0 mb-2.5">1 hour+</Filter>
     </>
   );
 }
@@ -95,10 +98,10 @@ function TimeFilters() {
 function PriceFilters() {
   return (
     <>
-      <Filter className="!px-2 mr-2.5 mb-2.5">$</Filter>
-      <Filter className="!px-2 mr-2.5 mb-2.5">$$</Filter>
-      <Filter className="!px-2 mr-2.5 mb-2.5">$$$</Filter>
-      <Filter className="!px-2 mr-2.5 mb-2.5">$$$$</Filter>
+      <Filter className="!px-2 mr-2.5 last:mr-0 mb-2.5">$</Filter>
+      <Filter className="!px-2 mr-2.5 last:mr-0 mb-2.5">$$</Filter>
+      <Filter className="!px-2 mr-2.5 last:mr-0 mb-2.5">$$$</Filter>
+      <Filter className="!px-2 mr-2.5 last:mr-0 mb-2.5">$$$$</Filter>
     </>
   );
 }
@@ -106,37 +109,117 @@ function PriceFilters() {
 function TopFoodFilters() {
   return (
     <>
-      <div className="min-h-20 min-w-40 p-2 mr-2 card">
-        Hamburgers
-      </div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 card">Pizza</div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 card">Taco</div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 card">Coffee</div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 card">Fries</div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 card">Mexican</div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 card">
+      <FoodCard
+        className="mr-2.5"
+        image={imageURL("/images/hamburger.png")}
+        imageAlt="Burger"
+      >
+        Hamburger
+      </FoodCard>
+      <FoodCard
+        className="mr-2.5"
+        image={imageURL("/images/pizza.png")}
+        imageAlt="Pizza"
+      >
+        Pizza
+      </FoodCard>
+      <FoodCard
+        className="mr-2.5"
+        image={imageURL("/images/taco.png")}
+        imageAlt="Taco"
+      >
+        Tacos
+      </FoodCard>
+      <FoodCard
+        className="mr-2.5"
+        image={imageURL("/images/coffee.png")}
+        imageAlt="Coffee"
+      >
+        Coffee
+      </FoodCard>
+      <FoodCard
+        className="mr-2.5"
+        image={imageURL("/images/fries.png")}
+        imageAlt="Fries"
+      >
+        Fries
+      </FoodCard>
+      <FoodCard
+        className="mr-2.5"
+        image={imageURL("/images/burrito.png")}
+        imageAlt="Burrito"
+      >
+        Mexican
+      </FoodCard>
+      <FoodCard
+        className="mr-2.5"
+        image={imageURL("/images/breakfast.png")}
+        imageAlt="Eggs and bacon"
+      >
         Breakfast
-      </div>
+      </FoodCard>
     </>
   );
 }
 
 function Restaurants() {
+  const restaurants = [
+    {
+      name: "Cortado Bar",
+      image_url: imageURL("/images/coffee.png"),
+      delivery_time_minutes: 7,
+    },
+    {
+      name: "Neta",
+      image_url: imageURL("/images/taco.png"),
+    },
+    {
+      name: "Breakfast Club",
+      image_url: imageURL("/images/breakfast.png"),
+      delivery_time_minutes: 25,
+    },
+    {
+      name: "Burgers n' stuff",
+      image_url: imageURL("/images/hamburger.png"),
+    },
+    {
+      name: "Fries Guys",
+      image_url: imageURL("/images/fries.png"),
+      delivery_time_minutes: 45,
+    },
+    {
+      name: "Cortado Bar",
+      image_url: imageURL("/images/coffee.png"),
+    },
+    {
+      name: "Cortado Bar",
+      image_url: imageURL("/images/coffee.png"),
+    },
+    {
+      name: "Cortado Bar",
+      image_url: imageURL("/images/coffee.png"),
+    },
+    {
+      name: "Cortado Bar",
+      image_url: imageURL("/images/coffee.png"),
+    },
+  ];
   return (
     <>
-      <div className="pt-40 min-w-80 p-2 mr-2 mb-2 bg-white dark:bg-black border">Cortado Bar</div>
-      <div className="pt-40 min-w-80 p-2 mr-2 mb-2 bg-white dark:bg-black border">Neta</div>
-      <div className="pt-40 min-w-80 p-2 mr-2 mb-2 bg-white dark:bg-black border">
-        Breakfast Club
-      </div>
-      <div className="pt-40 min-w-80 p-2 mr-2 mb-2 bg-white dark:bg-black border">
-        Burgers n&apos; stuff
-      </div>
-      <div className="pt-40 min-w-80 p-2 mr-2 mb-2 bg-white dark:bg-black border">Fries Guys</div>
-      <div className="pt-40 min-w-80 p-2 mr-2 mb-2 bg-white dark:bg-black border">Cortado Bar</div>
-      <div className="pt-40 min-w-80 p-2 mr-2 mb-2 bg-white dark:bg-black border">Cortado Bar</div>
-      <div className="pt-40 min-w-80 p-2 mr-2 mb-2 bg-white dark:bg-black border">Cortado Bar</div>
-      <div className="pt-40 min-w-80 p-2 mr-2 mb-2 bg-white dark:bg-black border">Cortado Bar</div>
+      {restaurants.map((restaurant, index) => (
+        <RestaurantCard
+          key={`${restaurant.name}/${index}`}
+          className="mr-4 mb-4"
+          restaurant={{
+            id: "",
+            rating: 0,
+            filter_ids: [],
+            delivery_time_minutes: 0,
+            price_range_id: "",
+            ...restaurant,
+          }}
+        />
+      ))}
     </>
   );
 }
