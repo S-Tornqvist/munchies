@@ -72,10 +72,10 @@ export default function Home() {
 function FoodFilters() {
   return (
     <>
-      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">Hamburger</div>
-      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">Pizza</div>
-      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">Tacos</div>
-      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">Coffe</div>
+      <div className="p-2 mr-2 last:mr-0 card">Hamburger</div>
+      <div className="p-2 mr-2 last:mr-0 card">Pizza</div>
+      <div className="p-2 mr-2 last:mr-0 card">Tacos</div>
+      <div className="p-2 mr-2 last:mr-0 card">Coffe</div>
     </>
   );
 }
@@ -83,10 +83,10 @@ function FoodFilters() {
 function TimeFilters() {
   return (
     <>
-      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">0-10 min</div>
-      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">10-30 min</div>
-      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">30-40 min</div>
-      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">1 hour+</div>
+      <div className="p-2 mr-2 last:mr-0 card">0-10 min</div>
+      <div className="p-2 mr-2 last:mr-0 card">10-30 min</div>
+      <div className="p-2 mr-2 last:mr-0 card">30-40 min</div>
+      <div className="p-2 mr-2 last:mr-0 card">1 hour+</div>
     </>
   );
 }
@@ -94,10 +94,10 @@ function TimeFilters() {
 function PriceFilters() {
   return (
     <>
-      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">$</div>
-      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">$$</div>
-      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">$$$</div>
-      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">$$$$</div>
+      <div className="p-2 mr-2 last:mr-0 card">$</div>
+      <div className="p-2 mr-2 last:mr-0 card">$$</div>
+      <div className="p-2 mr-2 last:mr-0 card">$$$</div>
+      <div className="p-2 mr-2 last:mr-0 card">$$$$</div>
     </>
   );
 }
@@ -105,15 +105,15 @@ function PriceFilters() {
 function TopFoodFilters() {
   return (
     <>
-      <div className="min-h-20 min-w-40 p-2 mr-2 bg-white dark:bg-black border">
+      <div className="min-h-20 min-w-40 p-2 mr-2 card">
         Hamburgers
       </div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 bg-white dark:bg-black border">Pizza</div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 bg-white dark:bg-black border">Taco</div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 bg-white dark:bg-black border">Coffee</div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 bg-white dark:bg-black border">Fries</div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 bg-white dark:bg-black border">Mexican</div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 bg-white dark:bg-black border">
+      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 card">Pizza</div>
+      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 card">Taco</div>
+      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 card">Coffee</div>
+      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 card">Fries</div>
+      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 card">Mexican</div>
+      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 card">
         Breakfast
       </div>
     </>

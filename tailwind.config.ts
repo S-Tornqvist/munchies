@@ -1,4 +1,7 @@
+
+
 import type { Config } from "tailwindcss";
+import { PluginCreator } from "tailwindcss/types/config";
 
 const config: Config = {
   content: [
@@ -22,6 +25,14 @@ const config: Config = {
       DEFAULT: theme("colors.stroke", "currentColor"),
     }),
   },
-  plugins: [],
+  plugins: [
+    function ({addComponents}: any) {
+      addComponents({
+        '.card': {
+          '@apply bg-white dark:bg-black border': {},
+        }
+      })
+    }
+  ],
 };
 export default config;
