@@ -72,10 +72,10 @@ export default function Home() {
 function FoodFilters() {
   return (
     <>
-      <div className="p-2 mr-2 last:mr-0 border">Hamburger</div>
-      <div className="p-2 mr-2 last:mr-0 border">Pizza</div>
-      <div className="p-2 mr-2 last:mr-0 border">Tacos</div>
-      <div className="p-2 mr-2 last:mr-0 border">Coffe</div>
+      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">Hamburger</div>
+      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">Pizza</div>
+      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">Tacos</div>
+      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">Coffe</div>
     </>
   );
 }
@@ -83,10 +83,10 @@ function FoodFilters() {
 function TimeFilters() {
   return (
     <>
-      <div className="p-2 mr-2 last:mr-0 border">0-10 min</div>
-      <div className="p-2 mr-2 last:mr-0 border">10-30 min</div>
-      <div className="p-2 mr-2 last:mr-0 border">30-40 min</div>
-      <div className="p-2 mr-2 last:mr-0 border">1 hour+</div>
+      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">0-10 min</div>
+      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">10-30 min</div>
+      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">30-40 min</div>
+      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">1 hour+</div>
     </>
   );
 }
@@ -94,10 +94,10 @@ function TimeFilters() {
 function PriceFilters() {
   return (
     <>
-      <div className="p-2 mr-2 last:mr-0 border">$</div>
-      <div className="p-2 mr-2 last:mr-0 border">$$</div>
-      <div className="p-2 mr-2 last:mr-0 border">$$$</div>
-      <div className="p-2 mr-2 last:mr-0 border">$$$$</div>
+      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">$</div>
+      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">$$</div>
+      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">$$$</div>
+      <div className="p-2 mr-2 last:mr-0 border bg-white dark:bg-black">$$$$</div>
     </>
   );
 }

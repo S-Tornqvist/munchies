@@ -15,7 +15,12 @@ const config: Config = {
       black: "#000000",
       "off-black": "#101010",
       green: "#00703a",
+      stroke: "rgba(0, 0, 0, 0.1)",
     },
+    borderColor: ({theme}) => ({
+      ...theme("colors"),
+      DEFAULT: theme("colors.stroke", "currentColor"),
+    }),
   },
   plugins: [],
 };
