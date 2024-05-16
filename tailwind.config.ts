@@ -1,7 +1,4 @@
-
-
 import type { Config } from "tailwindcss";
-import { PluginCreator } from "tailwindcss/types/config";
 
 const config: Config = {
   content: [
@@ -28,13 +25,23 @@ const config: Config = {
     },
   },
   plugins: [
-    function ({addComponents}: any) {
+    function ({ addComponents }: any) {
       addComponents({
-        '.card': {
-          '@apply bg-white dark:bg-black border': {},
-        }
-      })
-    }
+        ".rounded-t-2\\.5": {
+          borderTopLeftRadius: "10px",
+          borderTopRightRadius: "10px",
+        },
+        ".card": {
+          "@apply bg-white dark:bg-black border shadow-sm": {},
+        },
+        ".card-hover": {
+          "@apply hover:bg-gray-100 dark:hover:bg-gray-800": {},
+          "&:hover": {
+            "@apply shadow-lg": {},
+          },
+        },
+      });
+    },
   ],
 };
 export default config;

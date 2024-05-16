@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Filter from "./components/Filter";
 
 export default function Home() {
   return (
@@ -17,30 +18,30 @@ export default function Home() {
       {/* Main. Includes filter panel, filter top row and restaurants */}
       <div className="flex-1 flex flex-col md:flex-row overflow-auto">
         {/* Filter panel mobile */}
-        <div className="md:hidden flex-none mb-3">
-          <p>DELIVERY TIME</p>
+        <div className="md:hidden flex-none mb-8">
+          <div>DELIVERY TIME</div>
           <div className="flex flex-row flex-nowrap overflow-x-auto no-scrollbar">
             <TimeFilters />
           </div>
         </div>
 
         {/* Filter panel desktop*/}
-        <div className="hidden md:block flex-none w-60 min-h-full p-4 mr-4 bg-white dark:bg-black border">
-          <h1>Filter</h1>
-          <div className="py-2">
-            <p>FOOD CATEGORY</p>
+        <div className="hidden md:block flex-none w-60 min-h-max p-6 mr-5 card !border-b-0 !rounded-t-2.5">
+          <h1 className="mb-8">Filter</h1>
+          <div className="mb-6">
+            <div className="font-semibold opacity-40 mb-4">FOOD CATEGORY</div>
             <div className="flex flex-col items-start">
               <FoodFilters />
             </div>
           </div>
-          <div className="py-2">
-            <p>DELIVERY TIME</p>
+          <div className="mb-6">
+            <div className="font-semibold opacity-40 mb-4">DELIVERY TIME</div>
             <div className="flex flex-row flex-wrap">
               <TimeFilters />
             </div>
           </div>
-          <div className="py-2">
-            <p>PRICE RANGE</p>
+          <div className="mb-6">
+            <div className="font-semibold opacity-40 mb-4">PRICE RANGE</div>
             <div className="flex flex-row flex-wrap">
               <PriceFilters />
             </div>
@@ -72,10 +73,10 @@ export default function Home() {
 function FoodFilters() {
   return (
     <>
-      <div className="p-2 mr-2 last:mr-0 card">Hamburger</div>
-      <div className="p-2 mr-2 last:mr-0 card">Pizza</div>
-      <div className="p-2 mr-2 last:mr-0 card">Tacos</div>
-      <div className="p-2 mr-2 last:mr-0 card">Coffe</div>
+      <Filter className="mb-2.5">Hamburger</Filter>
+      <Filter className="mb-2.5">Pizza</Filter>
+      <Filter className="mb-2.5">Tacos</Filter>
+      <Filter className="mb-2.5">Coffee</Filter>
     </>
   );
 }
@@ -83,10 +84,10 @@ function FoodFilters() {
 function TimeFilters() {
   return (
     <>
-      <div className="p-2 mr-2 last:mr-0 card">0-10 min</div>
-      <div className="p-2 mr-2 last:mr-0 card">10-30 min</div>
-      <div className="p-2 mr-2 last:mr-0 card">30-40 min</div>
-      <div className="p-2 mr-2 last:mr-0 card">1 hour+</div>
+      <Filter className="mr-2.5 mb-2.5">0-10 min</Filter>
+      <Filter className="mr-2.5 mb-2.5">10-30 min</Filter>
+      <Filter className="mr-2.5 mb-2.5">30-40 min</Filter>
+      <Filter className="mr-2.5 mb-2.5">1 hour+</Filter>
     </>
   );
 }
@@ -94,10 +95,10 @@ function TimeFilters() {
 function PriceFilters() {
   return (
     <>
-      <div className="p-2 mr-2 last:mr-0 card">$</div>
-      <div className="p-2 mr-2 last:mr-0 card">$$</div>
-      <div className="p-2 mr-2 last:mr-0 card">$$$</div>
-      <div className="p-2 mr-2 last:mr-0 card">$$$$</div>
+      <Filter className="!px-2 mr-2.5 mb-2.5">$</Filter>
+      <Filter className="!px-2 mr-2.5 mb-2.5">$$</Filter>
+      <Filter className="!px-2 mr-2.5 mb-2.5">$$$</Filter>
+      <Filter className="!px-2 mr-2.5 mb-2.5">$$$$</Filter>
     </>
   );
 }
@@ -108,12 +109,12 @@ function TopFoodFilters() {
       <div className="min-h-20 min-w-40 p-2 mr-2 card">
         Hamburgers
       </div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 card">Pizza</div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 card">Taco</div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 card">Coffee</div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 card">Fries</div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 card">Mexican</div>
-      <div className="min-h-20 min-w-40 p-2 mr-2 last:mr-0 card">
+      <div className="min-h-20 min-w-40 p-2 mr-2 card">Pizza</div>
+      <div className="min-h-20 min-w-40 p-2 mr-2 card">Taco</div>
+      <div className="min-h-20 min-w-40 p-2 mr-2 card">Coffee</div>
+      <div className="min-h-20 min-w-40 p-2 mr-2 card">Fries</div>
+      <div className="min-h-20 min-w-40 p-2 mr-2 card">Mexican</div>
+      <div className="min-h-20 min-w-40 p-2 mr-2 card">
         Breakfast
       </div>
     </>
