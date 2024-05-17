@@ -65,7 +65,7 @@ export default function Home() {
         {/* Filter top row and restaurants*/}
         <div className="flex-1 overflow-hidden flex flex-col">
           {/* Filter top row */}
-          <div className="flex-none mb-6 md:mb-10 gap-2.5 flex flex-row flex-nowrap overflow-x-auto no-scrollbar">
+          <div className="flex-none mb-6 md:mb-10 gap-2.5 flex flex-row flex-nowrap overflow-x-auto overflow-y-hidden no-scrollbar">
             <TopFoodFilters />
           </div>
 
