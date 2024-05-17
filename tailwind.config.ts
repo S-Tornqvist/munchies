@@ -14,7 +14,7 @@ const config: Config = {
         white: "#ffffff",
         "off-white": "#fafafa",
         black: "#000000",
-        "off-black": "#101010",
+        "off-black": "#1c1c1c",
         green: "#00703a",
         stroke: "rgba(0, 0, 0, 0.1)",
       },

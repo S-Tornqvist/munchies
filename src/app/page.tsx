@@ -6,7 +6,7 @@ import RestaurantCard from "./components/RestaurantCard";
 
 export default function Home() {
   return (
-    <main className="min-h-screen max-h-screen ps-10 pt-14 flex flex-col">
+    <main className="min-h-screen max-h-screen px-6 md:px-10 pt-10 md:pt-12 flex flex-col">
       <div className="flex-none pb-12">
         <Image
           priority
@@ -21,32 +21,43 @@ export default function Home() {
       {/* Main. Includes filter panel, filter top row and restaurants */}
       <div className="flex-1 flex flex-col md:flex-row overflow-auto">
         {/* Filter panel mobile */}
-        <div className="md:hidden flex-none mb-8">
-          <div className="font-semibold opacity-40 mb-4">DELIVERY TIME</div>
-          <div className="flex flex-row flex-nowrap overflow-x-auto no-scrollbar">
-            <TimeFilters />
+        <div className="md:hidden flex-none mb-4">
+          <div className="font-semibold opacity-40 mb-2.5">DELIVERY TIME</div>
+          <div className="flex flex-row flex-nowrap gap-2.5 overflow-x-auto no-scrollbar">
+            <Filters
+              labels={["0-10 min", "10-30 min", "30-40 min", "1 hour+"]}
+            />
           </div>
         </div>
 
         {/* Filter panel desktop*/}
-        <div className="hidden md:block flex-none w-60 min-h-max p-6 mr-5 card !border-b-0 !rounded-t-2.5">
+        <div className="hidden md:block flex-none w-60 min-h-max p-6 mr-5 card border-b-0 rounded-t-2.5">
           <h1 className="mb-8">Filter</h1>
           <div className="mb-6">
             <div className="font-semibold opacity-40 mb-4">FOOD CATEGORY</div>
-            <div className="flex flex-col items-start">
-              <FoodFilters />
+            <div className="flex flex-col items-start gap-2.5">
+              <Filters
+                className="dark:bg-off-black"
+                labels={["Hamburger", "Pizza", "Tacos", "Coffee"]}
+              />
             </div>
           </div>
           <div className="mb-6">
             <div className="font-semibold opacity-40 mb-4">DELIVERY TIME</div>
-            <div className="flex flex-row flex-wrap">
-              <TimeFilters />
+            <div className="flex flex-row flex-wrap gap-2">
+              <Filters
+                className="dark:bg-off-black"
+                labels={["0-10 min", "10-30 min", "30-40 min", "1 hour+"]}
+              />
             </div>
           </div>
           <div className="mb-6">
             <div className="font-semibold opacity-40 mb-4">PRICE RANGE</div>
-            <div className="flex flex-row flex-wrap">
-              <PriceFilters />
+            <div className="flex flex-row flex-wrap gap-2">
+              <Filters
+                labels={["$", "$$", "$$$", "$$$$"]}
+                className="dark:bg-off-black !px-2"
+              />
             </div>
           </div>
         </div>
@@ -54,16 +65,14 @@ export default function Home() {
         {/* Filter top row and restaurants*/}
         <div className="flex-1 overflow-hidden flex flex-col">
           {/* Filter top row */}
-          <div className="flex-none mb-10 flex flex-row flex-nowrap overflow-x-auto no-scrollbar">
+          <div className="flex-none mb-6 md:mb-10 gap-2.5 flex flex-row flex-nowrap overflow-x-auto no-scrollbar">
             <TopFoodFilters />
           </div>
 
           {/* Restaurants */}
           <div className="flex flex-col overflow-hidden">
-            <div className="flex-none">
-              <div className="display mb-8">Restaurants</div>
-            </div>
-            <div className="flex-1 flex flex-row flex-wrap justify-center md:justify-normal overflow-auto no-scrollbar">
+            <div className="flex-none display mb-5 md:mb-8">Restaurants</div>
+            <div className="flex-1 flex flex-row flex-wrap justify-center gap-2.5 md:gap-4 md:justify-normal overflow-auto no-scrollbar">
               <Restaurants />
             </div>
           </div>
@@ -73,86 +82,40 @@ export default function Home() {
   );
 }
 
-function FoodFilters() {
-  return (
-    <>
-      <Filter className="mb-2.5">Hamburger</Filter>
-      <Filter className="mb-2.5">Pizza</Filter>
-      <Filter className="mb-2.5">Tacos</Filter>
-      <Filter className="mb-2.5">Coffee</Filter>
-    </>
-  );
-}
+// Dummy component
+const Filters: React.FC<{ labels: string[]; className?: string }> = ({
+  labels,
+  className,
+}) =>
+  labels.map((label, index) => (
+    <Filter className={className} key={`label/${index}`}>
+      {label}
+    </Filter>
+  ));
 
-function TimeFilters() {
-  return (
-    <>
-      <Filter className="mr-2.5 last:mr-0 mb-2.5">0-10 min</Filter>
-      <Filter className="mr-2.5 last:mr-0 mb-2.5">10-30 min</Filter>
-      <Filter className="mr-2.5 last:mr-0 mb-2.5">30-40 min</Filter>
-      <Filter className="mr-2.5 last:mr-0 mb-2.5">1 hour+</Filter>
-    </>
-  );
-}
-
-function PriceFilters() {
-  return (
-    <>
-      <Filter className="!px-2 mr-2.5 last:mr-0 mb-2.5">$</Filter>
-      <Filter className="!px-2 mr-2.5 last:mr-0 mb-2.5">$$</Filter>
-      <Filter className="!px-2 mr-2.5 last:mr-0 mb-2.5">$$$</Filter>
-      <Filter className="!px-2 mr-2.5 last:mr-0 mb-2.5">$$$$</Filter>
-    </>
-  );
-}
-
+// Dummy component
 function TopFoodFilters() {
   return (
     <>
-      <FoodCard
-        className="mr-2.5"
-        image={imageURL("/images/hamburger.png")}
-        imageAlt="Burger"
-      >
+      <FoodCard image={imageURL("/images/hamburger.png")} imageAlt="Burger">
         Hamburger
       </FoodCard>
-      <FoodCard
-        className="mr-2.5"
-        image={imageURL("/images/pizza.png")}
-        imageAlt="Pizza"
-      >
+      <FoodCard image={imageURL("/images/pizza.png")} imageAlt="Pizza">
         Pizza
       </FoodCard>
-      <FoodCard
-        className="mr-2.5"
-        image={imageURL("/images/taco.png")}
-        imageAlt="Taco"
-      >
+      <FoodCard image={imageURL("/images/taco.png")} imageAlt="Taco">
         Tacos
       </FoodCard>
-      <FoodCard
-        className="mr-2.5"
-        image={imageURL("/images/coffee.png")}
-        imageAlt="Coffee"
-      >
+      <FoodCard image={imageURL("/images/coffee.png")} imageAlt="Coffee">
         Coffee
       </FoodCard>
-      <FoodCard
-        className="mr-2.5"
-        image={imageURL("/images/fries.png")}
-        imageAlt="Fries"
-      >
+      <FoodCard image={imageURL("/images/fries.png")} imageAlt="Fries">
         Fries
       </FoodCard>
-      <FoodCard
-        className="mr-2.5"
-        image={imageURL("/images/burrito.png")}
-        imageAlt="Burrito"
-      >
+      <FoodCard image={imageURL("/images/burrito.png")} imageAlt="Burrito">
         Mexican
       </FoodCard>
       <FoodCard
-        className="mr-2.5"
         image={imageURL("/images/breakfast.png")}
         imageAlt="Eggs and bacon"
       >
@@ -162,6 +125,7 @@ function TopFoodFilters() {
   );
 }
 
+// Dummy component
 function Restaurants() {
   const restaurants = [
     {
@@ -209,7 +173,6 @@ function Restaurants() {
       {restaurants.map((restaurant, index) => (
         <RestaurantCard
           key={`${restaurant.name}/${index}`}
-          className="mr-4 mb-4"
           restaurant={{
             id: "",
             rating: 0,
