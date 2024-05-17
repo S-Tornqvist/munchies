@@ -28,6 +28,13 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.very-big {
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 760;
+  letter-spacing: -1px;
+}
+
 h1 {
   font-size: 24px;
   line-height: 125%;
@@ -50,6 +57,16 @@ h1 {
   font-size: 20px;
   line-height: 125%;
   letter-spacing: -0.03125rem;
+}
+
+.logo {
+  width: 167.17px;
+}
+
+@media (min-width: 640px) {
+  .logo {
+    width: 273.42px;
+  }
 }
 
 @media (min-width: 640px) {
