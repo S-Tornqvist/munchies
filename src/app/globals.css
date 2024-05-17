@@ -52,7 +52,7 @@ h1 {
   letter-spacing: -0.03125rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .display {
     font-size: 40px;
   }

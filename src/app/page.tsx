@@ -6,7 +6,7 @@ import RestaurantCard from "./components/RestaurantCard";
 
 export default function Home() {
   return (
-    <main className="min-h-screen max-h-screen px-6 md:px-10 pt-10 md:pt-12 flex flex-col">
+    <main className="min-h-screen max-h-screen ps-6 sm:ps-10 pt-10 sm:pt-12 flex flex-col">
       <div className="flex-none pb-12">
         <Image
           priority
@@ -19,9 +19,9 @@ export default function Home() {
       </div>
 
       {/* Main. Includes filter panel, filter top row and restaurants */}
-      <div className="flex-1 flex flex-col md:flex-row overflow-auto">
+      <div className="flex-1 flex flex-col sm:flex-row overflow-auto">
         {/* Filter panel mobile */}
-        <div className="md:hidden flex-none mb-4">
+        <div className="sm:hidden flex-none mb-4">
           <div className="font-semibold opacity-40 mb-2.5">DELIVERY TIME</div>
           <div className="flex flex-row flex-nowrap gap-2.5 overflow-x-auto no-scrollbar">
             <Filters
@@ -31,7 +31,7 @@ export default function Home() {
         </div>
 
         {/* Filter panel desktop*/}
-        <div className="hidden md:block flex-none w-60 min-h-max p-6 mr-5 card border-b-0 rounded-t-2.5">
+        <div className="hidden sm:block flex-none w-60 min-h-max p-6 mr-5 card border-b-0 rounded-t-2.5">
           <h1 className="mb-8">Filter</h1>
           <div className="mb-6">
             <div className="font-semibold opacity-40 mb-4">FOOD CATEGORY</div>
@@ -65,14 +65,14 @@ export default function Home() {
         {/* Filter top row and restaurants*/}
         <div className="flex-1 overflow-hidden flex flex-col">
           {/* Filter top row */}
-          <div className="flex-none mb-6 md:mb-10 gap-2.5 flex flex-row flex-nowrap overflow-x-auto overflow-y-hidden no-scrollbar">
+          <div className="flex-none mb-6 sm:mb-10 gap-2.5 flex flex-row flex-nowrap overflow-x-auto overflow-y-hidden no-scrollbar">
             <TopFoodFilters />
           </div>
 
           {/* Restaurants */}
           <div className="flex flex-col overflow-hidden">
-            <div className="flex-none display mb-5 md:mb-8">Restaurants</div>
-            <div className="flex-1 flex flex-row flex-wrap justify-center gap-2.5 md:gap-4 md:justify-normal overflow-auto no-scrollbar">
+            <div className="flex-none display mb-5 sm:mb-8">Restaurants</div>
+            <div className="flex-1 flex flex-col items-center sm:flex-row sm:flex-wrap pe-6 sm:pe-10 gap-2.5 sm:gap-4 overflow-auto no-scrollbar">
               <Restaurants />
             </div>
           </div>

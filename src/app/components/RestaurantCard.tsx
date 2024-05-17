@@ -17,7 +17,7 @@ export default function RestaurantCard({
   const pointer = open ? "" : "pointer-events-none";
   return (
     <div
-      className={`flex flex-col justify-between overflow-hidden relative p-4 bg-white dark:bg-black border rounded-lg ${className}`}
+      className={`flex-none flex flex-col justify-between overflow-hidden relative p-4 bg-white dark:bg-black border rounded-lg ${className}`}
       style={{ height: 200, width: 320 }}
     >
       <div className="flex-none flex flex-row">
