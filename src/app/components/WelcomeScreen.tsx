@@ -6,12 +6,6 @@ import Logo from "./Logo";
 export default function WelcomeScreen() {
   const [dismissed, setDismissed] = React.useState(false);
 
-  React.useEffect(() => {
-    if (sessionStorage.getItem("welcome") === "dismissed") {
-      setDismissed(true);
-    }
-  }, []);
-
   if (dismissed) {
     return null;
   }
@@ -34,10 +28,7 @@ export default function WelcomeScreen() {
         </div>
         <div className="w-full">
           <div
-            onClick={() => {
-              setDismissed(true);
-              sessionStorage.setItem("welcome", "dismissed");
-            }}
+            onClick={() => setDismissed(true)}
             className="mx-auto text-base font-bold text-center w-80 h-14 hover:shadow-2xl border-white border bg-green rounded-lg"
             role="button"
           >

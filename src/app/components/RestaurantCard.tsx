@@ -42,7 +42,7 @@ export default function RestaurantCard({
 
       {!open && (
         <div
-          className="bg-off-white dark:bg-off-black px-3 py-2 absolute border rounded"
+          className="z-50 bg-off-white dark:bg-off-black px-3 py-2 absolute border rounded"
           style={{ top: 85, left: 85 }}
         >
           Opens tomorrow at 12 pm
