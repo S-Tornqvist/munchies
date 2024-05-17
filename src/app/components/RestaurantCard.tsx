@@ -3,20 +3,29 @@ import Chip from "./Chip";
 import Image from "next/image";
 import Circle from "./Circle";
 import { timeSpan } from "@/util/timeSpan";
+import { imageURL } from "@/util/image";
 
 export type RestaurantCardProps = {
   restaurant: Restaurant;
+  open: boolean;
   className?: string;
 };
+
+/**
+ * A card that displays information about a restaurant. Shows open status,
+ * delivery time span, name, image and navigation button.
+ */
 export default function RestaurantCard({
   restaurant,
+  open,
   className,
 }: RestaurantCardProps) {
-  const open = restaurant.name.length % 2 === 0; // TODO: implement
   const opacity = open ? "" : "opacity-20";
   const pointer = open ? "" : "pointer-events-none";
+  console.log("image", imageURL(restaurant.image_url))
   return (
     <div
+      tabIndex={0}
       className={`flex-none flex flex-col justify-between overflow-hidden relative p-4 bg-white dark:bg-black border rounded-lg ${className}`}
       style={{ height: 200, width: 320 }}
     >
@@ -45,7 +54,7 @@ export default function RestaurantCard({
       {/* Limited server capacity per month. No nextjs/image handling. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={restaurant.image_url}
+        src={imageURL(restaurant.image_url)}
         width={140}
         height={140}
         alt={restaurant.name}

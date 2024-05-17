@@ -3,6 +3,9 @@ export type CircleProps = {
   fill?: string;
 };
 
+/**
+ * A tiny SVG circle of 8x8 pixels with arbitrary fill and classname.
+ */
 export default function Circle({ className, fill }: CircleProps) {
   return (
     <svg

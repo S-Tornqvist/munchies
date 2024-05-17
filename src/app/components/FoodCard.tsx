@@ -1,26 +1,32 @@
 export type FoodCardProps = React.PropsWithChildren<{
   image?: string;
   imageAlt: string;
-  active?: boolean;
+  selected?: boolean;
   className?: string;
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
   onKeyDown?: (event: React.KeyboardEvent<HTMLDivElement>) => void;
 }>;
 
+/**
+ * A card for food items, showing image and title.
+ * 
+ * Rendered with role="button", and highlights on both hover and selection.
+ */
 export default function FoodCard({
   children,
   image,
   imageAlt,
-  active,
+  selected,
   className,
   onClick,
   onKeyDown,
 }: FoodCardProps) {
-  const activeBg = active ? "border-green" : "";
+  const selectedBg = selected ? "border-green" : "";
   return (
     <div
       role="button"
-      className={`card card-hover title min-h-20 min-w-40 px-3 py-4 rounded-lg relative ${activeBg} ${className}`}
+      tabIndex={0}
+      className={`card card-hover title min-h-20 min-w-40 px-3 py-4 rounded-lg relative ${selectedBg} ${className}`}
       onClick={onClick}
       onKeyDown={onKeyDown}
     >
