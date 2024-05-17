@@ -3,17 +3,21 @@
 import { useAppContext } from "@/contexts/AppContext";
 import FilterButton from "./FilterButton";
 
+export type PriceFilterItemsProps = {
+  className?: string;
+};
+
 /**
  * Renders the price filters in `AppContext` as selectable `FilterButton`
  * components.
  */
-export default function PriceFilterItems() {
+export default function PriceFilterItems({ className }: PriceFilterItemsProps) {
   const { priceRanges, selectedPriceRanges, setSelectedPriceRanges } =
     useAppContext();
 
   return priceRanges.map((priceRange) => (
     <FilterButton
-      className="dark:bg-off-black"
+      className={className}
       key={priceRange.id}
       onClick={() =>
         setSelectedPriceRanges((prev) =>

@@ -52,7 +52,7 @@ export default async function Home() {
             <div className="mb-6">
               <div className="font-semibold opacity-40 mb-4">PRICE RANGE</div>
               <div className="flex flex-row flex-wrap gap-2">
-                <PriceFilterItems />
+                <PriceFilterItems className="dark:bg-off-black !px-2" />
               </div>
             </div>
           </div>
