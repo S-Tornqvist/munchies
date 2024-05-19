@@ -35,9 +35,10 @@ const config: Config = {
           "@apply bg-white dark:bg-black border shadow-sm": {},
         },
         ".card-hover": {
-          "@apply hover:bg-gray-100 dark:hover:bg-gray-800": {},
+          "@apply active:bg-gray-100 dark:active:bg-gray-800 sm:hover:bg-gray-100 sm:dark:hover:bg-gray-800":
+            {},
           "&:hover": {
-            "@apply shadow-lg": {},
+            "@apply active:shadow-lg sm:shadow-lg": {},
           },
         },
       });
