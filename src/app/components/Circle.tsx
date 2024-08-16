@@ -1,22 +1,19 @@
-export type CircleProps = {
-  className?: string;
-  fill?: string;
-};
+import { PropsWithClass } from "../../util";
 
-/**
- * A tiny SVG circle of 8x8 pixels with arbitrary fill and classname.
- */
-export default function Circle({ className, fill }: CircleProps) {
+export type CircleProps = PropsWithClass<{
+  radius: number;
+}>;
+
+export default function Circle({ radius, className = "" }: CircleProps) {
   return (
     <svg
       className={className}
-      width="8"
-      height="8"
-      viewBox="0 0 8 8"
-      fill={fill}
+      width={radius * 2}
+      height={radius * 2}
+      viewBox={`0 0 ${radius * 2} ${radius * 2}`}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="4" cy="4" r="4" fill={fill} />
+      <circle cx={radius} cy={radius} r={radius} />
     </svg>
   );
 }

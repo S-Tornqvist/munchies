@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import WelcomeScreen from "./components/WelcomeScreen";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Munchies",
-  description: "A Umain work test.",
+  description:
+    "Find the best restaurants in your city and get it delivered to your place!",
 };
 
 export default function RootLayout({
@@ -17,13 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
-      <body className={inter.className}>
-        <WelcomeScreen />
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: { max: "639.999px" },
+      },
       colors: {
         transparent: "transparent",
         current: "currentColor",
@@ -24,25 +27,6 @@ const config: Config = {
       }),
     },
   },
-  plugins: [
-    function ({ addComponents }: any) {
-      addComponents({
-        ".rounded-t-2\\.5": {
-          borderTopLeftRadius: "10px",
-          borderTopRightRadius: "10px",
-        },
-        ".card": {
-          "@apply bg-white dark:bg-black border shadow-sm": {},
-        },
-        ".card-hover": {
-          "@apply active:bg-gray-100 dark:active:bg-gray-800 sm:hover:bg-gray-100 sm:dark:hover:bg-gray-800":
-            {},
-          "&:hover": {
-            "@apply active:shadow-lg sm:shadow-lg": {},
-          },
-        },
-      });
-    },
-  ],
+  plugins: [],
 };
 export default config;

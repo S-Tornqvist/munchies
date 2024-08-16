@@ -1,11 +1,9 @@
-export type ChipProps = React.PropsWithChildren<{
-  className?: string;
-}>;
+import { PropsWithChildrenAndClass } from "../../util";
 
-/**
- * A small chip.
- */
-export default function Chip({ children, className }: ChipProps) {
+export default function Chip({
+  children,
+  className = "",
+}: PropsWithChildrenAndClass) {
   return (
     <div className={`card px-3 py-2 rounded-full ${className}`}>{children}</div>
   );
