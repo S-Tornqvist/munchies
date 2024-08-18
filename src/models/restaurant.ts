@@ -20,7 +20,7 @@ export type Restaurant = {
  * [/restaurants](https://work-test-web-2024-eze6j4scpq-lz.a.run.app/api-docs/#/default/get_restaurants).
  */
 export function fetchAllRestaurants(): Promise<Restaurant[]> {
-  return apiFetch("restaurants")
+  return apiFetch("restaurants", { next: { revalidate: 0 } })
     .then((res) => res.json())
     .then(allRestaurantsSchema.parse)
     .then((res) => res.restaurants);

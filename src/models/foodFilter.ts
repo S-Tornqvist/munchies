@@ -26,7 +26,7 @@ export function fetchFoodFilter(id: string): Promise<FoodFilter> {
  * [/filter](https://work-test-web-2024-eze6j4scpq-lz.a.run.app/api-docs/#/default/get_filter).
  */
 export function fetchAllFoodFilters(): Promise<FoodFilter[]> {
-  return apiFetch("filter")
+  return apiFetch("filter", { next: { revalidate: 0 } })
     .then((res) => res.json())
     .then(allFiltersSchema.parse)
     .then((res) => res.filters);
